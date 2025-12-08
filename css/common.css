@@ -40,14 +40,12 @@ body {
     font-weight: 400;
     font-style: normal;
 
- 
     min-height: 100dvh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     background-color: var(--blue-dark);
     color: var(--text-black);
 }
-
 .main-content{
     flex: 1;
 }
@@ -69,8 +67,6 @@ body {
     text-decoration: none;
     color: var(--text-black);
     transition: border 0.3s ease-in-out;
-
-
 }
 .nav-link.active,
 .nav-link:hover
@@ -84,7 +80,6 @@ body {
 
 .logo{
     position: absolute;
-    left: 16px;
+    left: 32px;
     top: 16px;
 }
-
