@@ -141,3 +141,50 @@ gap: 16px;
     background-color: var(--blue-light);
     border-radius: 128px 128px 0px 0px;
 }
+
+.gallery{
+    display: flex;
+   gap: 12px; 
+}
+
+.box{
+    flex-direction: column;
+    >h3{
+
+    }
+}
+
+.jeff{
+    background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+}
+.grid-row{
+    display: flex;
+    gap: 15px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.jname{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: black;
+    padding: 28px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.funnies{
+    font-weight: bold;
+}
