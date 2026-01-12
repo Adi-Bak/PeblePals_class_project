@@ -100,7 +100,7 @@ body {
     position: relative;
 }
 
-.footer-content-wrapper{
+.footer-content-wrapper {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -114,16 +114,45 @@ body {
     padding: 40px 20px 20px;
     display: flex;
     flex-direction: column;
-    > h4{
+
+    >h4 {
         text-decoration: underline;
         color: var(--yellow)
+    }
 
-    }
-    > a {
-        display:block;
+    >a {
+        display: block;
         color: var(--text-white);
     }
-    >p{
+
+    >p {
         color: var(--text-white);
     }
+}
+
+.clouds-section {
+    background: #90B7BF;
+    background: linear-gradient(0deg, rgba(144, 183, 191, 1) 50%, rgba(103, 161, 188, 1) 100%);
+    position: relative;
+    min-height: 600px;
+
+}
+
+.cloud {
+    position: absolute
+}
+
+.cloud.left {
+    top: 16px;
+    left: 0;
+}
+
+.cloud.right {
+    right: 0;
+    top: 32px;
+}
+
+.cloud.small {
+    left: 33%;
+    top: 16px;
 }
