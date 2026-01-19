@@ -85,6 +85,7 @@ body {
     position: absolute;
     left: 32px;
     top: 16px;
+    z-index: 1;
 }
 
 .main-footer {
@@ -135,7 +136,10 @@ body {
     background: linear-gradient(0deg, rgba(144, 183, 191, 1) 50%, rgba(103, 161, 188, 1) 100%);
     position: relative;
     min-height: 600px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cloud {
@@ -155,4 +159,39 @@ body {
 .cloud.small {
     left: 33%;
     top: 16px;
+}
+
+.testimonials-box {
+    position: relative;
+    z-index: 2;
+
+    padding: 32px;
+
+    display: flex;
+    gap: 32px;
+
+    flex-wrap: wrap;
+    max-width: 800px;
+
+
+}
+
+.testimonial{
+    padding: 32px;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    background: linear-gradient(180deg, rgba(255,255,255,1)0%, rgba(152,222,245,1)150%);
+}
+
+.t-rating-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid var(--text-black);
+}
+
+.t-message{
+    font-weight: 600;
+    text-align: center;
 }
