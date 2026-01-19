@@ -32,3 +32,38 @@ const testimonialList = [
     }
 ]
 
+let testimonialsBox =document.getElementById("testimonials-box");
+
+for (let review of testimonialList){
+
+    let stars = "";
+    for (let i = 0; i < 5; i++){
+        if(i < review.rating){
+            stars += `<img class="star-img" src="assets/star_yellow.svg"`>`
+            <! --EVERY REVIEW HAS A RATING SO THIS IS MAKING SURE IT DOESN'T HAVE LESS STARS THAN THE YELLOW ONES-->
+        } else {
+         stars += `<img class="star-img" src"/assets/star_black.svg">``
+        }
+        }
+    }
+
+    let testimonialToAdd = `
+     <div class="testimonial">
+                <div class="t-rating row">
+                    <div class="t-stars">
+                        <img class="star-img" src="assets/star_yellow.svg">
+                        <img class="star-img" src="assets/star_yellow.svg">
+                        <img class="star-img" src="assets/star_yellow.svg">
+                        <img class="star-img" src="assets/star_black.svg">
+                        <img class="star-img" src="assets/star_black.svg">
+                    </div>
+                    <p class="t-name">~${review.name}</p>
+                </div>
+                <p class="t-message">
+                    ${review.review}
+                </p>
+            </div>
+        </div>`
+
+        testimonialsBox.innerHTML += testimonialToAdd;
+}
