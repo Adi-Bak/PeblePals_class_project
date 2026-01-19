@@ -32,18 +32,16 @@ const testimonialList = [
     }
 ]
 
-let testimonialsBox =document.getElementById("testimonials-box");
+let testimonialsBox = document.getElementById("testimonials-box");
 
-for (let review of testimonialList){
+for (let review of testimonialList) {
 
     let stars = "";
-    for (let i = 0; i < 5; i++){
-        if(i < review.rating){
-            stars += `<img class="star-img" src="assets/star_yellow.svg"`>`
-            <! --EVERY REVIEW HAS A RATING SO THIS IS MAKING SURE IT DOESN'T HAVE LESS STARS THAN THE YELLOW ONES-->
+    for (let i = 0; i < 5; i++) {
+        if (i < review.rating) {
+            stars += `<img class="star-img" src="/assets/star_yellow.svg">`
         } else {
-         stars += `<img class="star-img" src"/assets/star_black.svg">``
-        }
+            stars += `<img class="star-img" src="/assets/star_black.svg">`
         }
     }
 
@@ -51,11 +49,7 @@ for (let review of testimonialList){
      <div class="testimonial">
                 <div class="t-rating row">
                     <div class="t-stars">
-                        <img class="star-img" src="assets/star_yellow.svg">
-                        <img class="star-img" src="assets/star_yellow.svg">
-                        <img class="star-img" src="assets/star_yellow.svg">
-                        <img class="star-img" src="assets/star_black.svg">
-                        <img class="star-img" src="assets/star_black.svg">
+                        ${stars}
                     </div>
                     <p class="t-name">~${review.name}</p>
                 </div>
@@ -65,5 +59,6 @@ for (let review of testimonialList){
             </div>
         </div>`
 
-        testimonialsBox.innerHTML += testimonialToAdd;
+    testimonialsBox.innerHTML += testimonialToAdd;
 }
+
