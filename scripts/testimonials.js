@@ -1,5 +1,5 @@
-// FOR LATER, IGNORE FOR NOW
-const testimonialList = [
+// If we don't have local testimonalis these will be loaded by default.
+let testimonialList = [
     {
         "rating": 4,
         "name": "Bobbi",
@@ -32,9 +32,26 @@ const testimonialList = [
     }
 ]
 
+// the function will load testimonials, if nothing is saved, use defaults
+function loadTestimonials(){
+    let loaded= JSON.parse(localStorage.getItem("testimonials"))
+
+    if (loaded){
+        return loaded
+    }  else {
+        return testimonialList
+    }
+}
+
+function saveTestimonials(){
+    localStorage.setItem("testimonials", JSON.stringify(testimonialList));
+}
+// display testimonials to the screen
+testimonialList =loadTestimonials();
 let testimonialsBox = document.getElementById("testimonials-box");
 
-for (let review of testimonialList) {
+// Draw the loaded testimonials to the screen
+for (let review of testimonialList){
     drawNewTestimonial(review.name, review.review, review.rating);
 }
 
@@ -47,13 +64,20 @@ function addTestimonial(event){
     let message = document.getElementById("t-message").value;
     let rating = document.querySelector('Input[name=rating]:checked').value;
 
-        drawNewTestimonial(name,message,rating)
+    drawNewTestimonial(name,message,rating);
+
+    // adds are formatted testimonial to our list, thnen saves the list to our local storage
+    testimonialList.push({
+        "rating": rating,
+        "name": name,
+        "review": message
+})
+saveTestimonials();
+
 }
 tform.addEventListener("submit", addTestimonial);
 
-// HAVE A CUSTOM FUNCTION, THAT CREATE A TESTIMONIAL
-// THE FUNCTION WILL ACCEPT NAME, MESSAGE, AND RATING
-// THEN USE THE FUNCTION IN YOUE TESTIMONIAL AND THE REVIEW LOOP SO YOU HAVE LESS CODE OVERALL
+
 
 function drawNewTestimonial(name, message, rating){
     let stars = "";
